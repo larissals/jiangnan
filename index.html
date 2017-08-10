@@ -113,15 +113,15 @@
 </body>
 <script type="text/javascript">
  paceOptions= {
- 	elemets:true
+ 	elemets:
  };
 </script>
 
 
 <script type="text/javascript" src="./js/pace.js"></script>
 <script type="text/javascript">
-	Pace.once('done',function(){
-		alert("是时候做一个加载完毕后的跳转了");
+	Pace.once('hide',function(){
+		window.location.href="page2.html"
 	})
 </script>
 </html>

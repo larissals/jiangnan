@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>江南布衣</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<style type="text/css">
+	#bgvid { 
+			position: fixed; right: 0; bottom: 0; 
+			min-width: 100%; min-height: 100%; 
+			width: auto; 
+			height: auto; 
+			z-index: -100; 
+			background: no-repeat; 
+			background-size: cover;
+		}
+
+	.background{
+		position: fixed; right: 0; bottom: 0; 
+		min-width: 100%; min-height: 100%;
+		width: auto; 
+		height: auto;
+		background-color: #656565;
+		z-index: -99;
+		opacity: 0.7; 
+	}
+	#obj{
+   			-webkit-animation:share_icon 1s linear infinite;
+		}
+	@-webkit-keyframes share_icon {
+		   0% {opacity:0}
+		   50% { opacity:1}
+		   100% { opacity:0}
+		}
+		/* 闪亮圆圈 */
+	.p1,.p2,.p3{
+		height: 3px;
+		background: #ffc000;
+		margin: 5px 0;
+	}
+	.p1{
+		width: 100%;
+	}
+	.p2{
+		width: 90%;
+	}
+	.p3{
+		width: 80%;
+	}
+	.n_94,.proanimate
+	{
+		width: 60%;
+		margin:0 auto;
+	}
+	.n_94 img
+	{
+		width: 100%;
+	}
+	.title{
+			display: none;
+
+			width: 80%;
+			display: flex;
+			align-items: center;
+			margin: 0 auto;
+
+			}
+		.title p{
+			flex: 1;
+		}
+		.title p img{
+			width: 50%;
+		}
+	.footer{
+		position: fixed;
+		bottom: 20px;
+	}
+	.next{
+		width: 25px;
+		height: 25px;
+		position: relative;
+		margin: 20px auto 0 auto;
+		background: url('./img/next.png') center no-repeat;
+		background-size: 100% 100%;
+		animation: next 1s linear infinite;
+	}
+	@-webkit-keyframes next {
+		   0% {bottom: 25px}
+		   50% { bottom: :20px}
+		   100% { bottom:0}
+	}
+
+	</style>
+</head>
+<body>
+	<video autoplay="autoplay" loop="loop" id="bgvid">
+			 <source src="video/1.mp4" type="video/mp4">
+	</video>
+	<div class="background">
+	</div>
+	<div class="main">
+		<div class="n_94">
+			<img src="./img/1994.png">
+		</div>
+		<div class="proanimate">
+			<div class="p1"></div>
+			<div class="p2"></div>
+			<div class="p3"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="title">
+			<p style="text-align: right;margin-bottom: 0;"><img src="./img/123121.png"></p>
+			<p style="margin-bottom: 0;"><img src="./img/2.png"></p>
+		</div>
+		<div class="next">
+			
+		</div>
+	</div>
+	
+
+
+	<script type="text/javascript">
+		function time(){
+			$('.p1').animate({
+				width:'toggle'
+			},'slow');
+		}
+		function time2(){
+			setTimeout(function(){
+				$('.p2').animate({
+					width:'toggle'
+					},'slow');
+			},500);
+		}
+		function time3(){
+			setTimeout(function(){
+				$('.p3').animate({
+					width:'toggle'
+					},'slow');
+			},1000);
+		}
+		$(document).ready(function() {
+			setInterval('time()',500);
+			setInterval('time2()',500);
+			setInterval('time3()',500);
+
+		});
+		var y=$(window).height();
+		var yy=$('.main').height();
+		var center=parseInt((y-yy)/2.5);
+		console.log(center);
+		$('.main').css('margin-top', center);
+
+	</script>
+
+</body>
+</html>
