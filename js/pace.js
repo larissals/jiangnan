@@ -6,10 +6,10 @@
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   defaultOptions = {
-    catchupTime: 100,
+    catchupTime: 1000,
     initialRate: .03,
-    minTime: 250,
-    ghostTime: 100,
+    minTime: 2500,
+    ghostTime: 1000,
     maxProgressPerFrame: 20,
     easeFactor: 1.25,
     startOnPageLoad: true,
@@ -17,13 +17,13 @@
     restartOnRequestAfter: 500,
     target: 'body',
     elements: {
-      checkInterval: 100,
+      checkInterval: 1000,
       selectors: ['body']
     },
     eventLag: {
-      minSamples: 10,
-      sampleCount: 3,
-      lagThreshold: 3
+      minSamples: 100,
+      sampleCount: 30,
+      lagThreshold: 30
     },
     ajax: {
       trackMethods: ['GET'],
