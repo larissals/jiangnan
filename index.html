@@ -112,13 +112,16 @@
 
 </body>
 <script type="text/javascript">
-	$(document).ready(function() {
-		paceOptions={
-			elements:['video']
-		}
-	});
+ paceOptions= {
+ 	elemets:true
+ };
 </script>
 
 
 <script type="text/javascript" src="./js/pace.js"></script>
+<script type="text/javascript">
+	Pace.once('done',function(){
+		alert("是时候做一个加载完毕后的跳转了");
+	})
+</script>
 </html>
